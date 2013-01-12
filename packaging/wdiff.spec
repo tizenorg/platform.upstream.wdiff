@@ -45,17 +45,12 @@ make "DESTDIR=%{buildroot}" install
 
 %files
 %defattr(-,root,root)
-%doc BACKLOG ChangeLog NEWS README* THANKS TODO ABOUT-NLS AUTHORS COPYING
+%license COPYING
 %{_infodir}/wdiff.info*
 /usr/bin/*
 %{_mandir}/man1/*
 
 %files lang -f %{name}-gnulib.lang -f %{name}.lang
 
-%post
-%install_info --info-dir=%{_infodir} %{_infodir}/%{name}.info.gz
-
-%postun
-%install_info_delete --info-dir=%{_infodir} %{_infodir}/%{name}.info.gz
 
 %changelog
