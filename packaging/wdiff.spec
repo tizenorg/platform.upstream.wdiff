@@ -1,5 +1,5 @@
 Name:           wdiff
-Version:        1.0.1
+Version:        1.0.2
 Release:        1
 License:        GPL-2.0+
 Summary:        Display Word Differences Between Text Files
@@ -7,7 +7,6 @@ Url:            ftp://mirrors.kernel.org/gnu/wdiff/
 Group:          Productivity/Text/Utilities
 Source:         http://alpha.gnu.org/gnu/wdiff/wdiff-%{version}.tar.bz2
 BuildRequires:  ncurses-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 wdiff compares two files and finds which words have been deleted or
