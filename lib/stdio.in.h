@@ -170,6 +170,26 @@ _GL_WARN_ON_USE (fclose, "fclose is not always POSIX compliant - "
                  "use gnulib module fclose for portable POSIX compliance");
 #endif
 
+#if @GNULIB_FDOPEN@
+# if @REPLACE_FDOPEN@
+#  if !(defined __cplusplus && defined GNULIB_NAMESPACE)
+#   undef fdopen
+#   define fdopen rpl_fdopen
+#  endif
+_GL_FUNCDECL_RPL (fdopen, FILE *, (int fd, const char *mode)
+                                  _GL_ARG_NONNULL ((2)));
+_GL_CXXALIAS_RPL (fdopen, FILE *, (int fd, const char *mode));
+# else
+_GL_CXXALIAS_SYS (fdopen, FILE *, (int fd, const char *mode));
+# endif
+_GL_CXXALIASWARN (fdopen);
+#elif defined GNULIB_POSIXCHECK
+# undef fdopen
+/* Assume fdopen is always declared.  */
+_GL_WARN_ON_USE (fdopen, "fdopen on Win32 platforms is not POSIX compatible - "
+                 "use gnulib module fdopen for portability");
+#endif
+
 #if @GNULIB_FFLUSH@
 /* Flush all pending data on STREAM according to POSIX rules.  Both
    output and seekable input streams are supported.
@@ -679,22 +699,11 @@ _GL_WARN_ON_USE (getline, "getline is unportable - "
 # endif
 #endif
 
-#if @GNULIB_GETS@
-# if @REPLACE_STDIO_READ_FUNCS@ && @GNULIB_STDIO_H_NONBLOCKING@
-#  if !(defined __cplusplus && defined GNULIB_NAMESPACE)
-#   undef gets
-#   define gets rpl_gets
-#  endif
-_GL_FUNCDECL_RPL (gets, char *, (char *s) _GL_ARG_NONNULL ((1)));
-_GL_CXXALIAS_RPL (gets, char *, (char *s));
-# else
-_GL_CXXALIAS_SYS (gets, char *, (char *s));
-#  undef gets
-# endif
-_GL_CXXALIASWARN (gets);
 /* It is very rare that the developer ever has full control of stdin,
-   so any use of gets warrants an unconditional warning.  Assume it is
-   always declared, since it is required by C89.  */
+   so any use of gets warrants an unconditional warning; besides, C11
+   removed it.  */
+#undef gets
+#if HAVE_RAW_DECL_GETS
 _GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");
 #endif
 
@@ -750,6 +759,20 @@ _GL_CXXALIAS_SYS (obstack_vprintf, int,
 _GL_CXXALIASWARN (obstack_vprintf);
 #endif
 
+#if @GNULIB_PCLOSE@
+# if !@HAVE_PCLOSE@
+_GL_FUNCDECL_SYS (pclose, int, (FILE *stream) _GL_ARG_NONNULL ((1)));
+# endif
+_GL_CXXALIAS_SYS (pclose, int, (FILE *stream));
+_GL_CXXALIASWARN (pclose);
+#elif defined GNULIB_POSIXCHECK
+# undef pclose
+# if HAVE_RAW_DECL_PCLOSE
+_GL_WARN_ON_USE (pclose, "popen is unportable - "
+                 "use gnulib module pclose for more portability");
+# endif
+#endif
+
 #if @GNULIB_PERROR@
 /* Print a message to standard error, describing the value of ERRNO,
    (if STRING is not NULL and not empty) prefixed with STRING and ": ",
@@ -781,6 +804,10 @@ _GL_FUNCDECL_RPL (popen, FILE *, (const char *cmd, const char *mode)
                                  _GL_ARG_NONNULL ((1, 2)));
 _GL_CXXALIAS_RPL (popen, FILE *, (const char *cmd, const char *mode));
 # else
+#  if !@HAVE_POPEN@
+_GL_FUNCDECL_SYS (popen, FILE *, (const char *cmd, const char *mode)
+                                 _GL_ARG_NONNULL ((1, 2)));
+#  endif
 _GL_CXXALIAS_SYS (popen, FILE *, (const char *cmd, const char *mode));
 # endif
 _GL_CXXALIASWARN (popen);
@@ -1016,9 +1043,9 @@ _GL_WARN_ON_USE (snprintf, "snprintf is unportable - "
 # endif
 #endif
 
-/* Some people would argue that sprintf should be handled like gets
-   (for example, OpenBSD issues a link warning for both functions),
-   since both can cause security holes due to buffer overruns.
+/* Some people would argue that all sprintf uses should be warned about
+   (for example, OpenBSD issues a link warning for it),
+   since it can cause security holes due to buffer overruns.
    However, we believe that sprintf can be used safely, and is more
    efficient than snprintf in those safe cases; and as proof of our
    belief, we use sprintf in several gnulib modules.  So this header

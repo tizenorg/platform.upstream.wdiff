@@ -5,10 +5,10 @@
 # Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU wdiff 1.0.0\n"
+"Project-Id-Version: GNU wdiff 1.0.2\n"
 "Report-Msgid-Bugs-To: wdiff-bugs@gnu.org\n"
-"POT-Creation-Date: 2011-09-15 14:15+0200\n"
-"PO-Revision-Date: 2011-09-06 22:16+0300\n"
+"POT-Creation-Date: 2012-05-30 22:32+0200\n"
+"PO-Revision-Date: 2011-09-17 12:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
 "Language: uk\n"
@@ -16,114 +16,176 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/mdiff.c:371
+#: src/mdiff.c:375
 #, c-format
 msgid "%s (for regexp `%s')"
 msgstr "%s (для формального виразу «%s»)"
 
-#: src/mdiff.c:886 src/wdiff.c:1473
+#: src/mdiff.c:890 src/wdiff.c:1473
 #, c-format
 msgid "only one file may be standard input"
 msgstr "стандартним джерелом даних може бути лише один файл"
 
-#: src/mdiff.c:901 src/wdiff.c:674
+#: src/mdiff.c:905 src/wdiff.c:678
 #, c-format
 msgid "directories not supported"
 msgstr "каталоги не підтримуються"
 
-#: src/mdiff.c:1044
+#: src/mdiff.c:1048
 #, c-format
 msgid "Reading %s"
 msgstr "Читання %s"
 
-#: src/mdiff.c:1168
+#: src/mdiff.c:1172
 #, c-format
-msgid ", %d items\n"
-msgstr ", %d пунктів\n"
+msgid ", %d item\n"
+msgid_plural ", %d items\n"
+msgstr[0] ", %d пункт\n"
+msgstr[1] ", %d пункти\n"
+msgstr[2] ", %d пунктів\n"
 
-#: src/mdiff.c:1246
+#: src/mdiff.c:1252
 #, c-format
-msgid "Read summary: %d files, %d items\n"
-msgstr "Резюме читання: %d файлів, %d пунктів\n"
+msgid "Read summary:"
+msgstr "Підсумки читання:"
 
-#: src/mdiff.c:1638
+#: src/mdiff.c:1253
+#, c-format
+msgid " %d file,"
+msgid_plural " %d files,"
+msgstr[0] ", %d файл,"
+msgstr[1] " %d файли,"
+msgstr[2] " %d файлів,"
+
+#: src/mdiff.c:1254
+#, c-format
+msgid " %d item\n"
+msgid_plural " %d items\n"
+msgstr[0] " %d пункт\n"
+msgstr[1] " %d пункти\n"
+msgstr[2] " %d пунктів\n"
+
+#: src/mdiff.c:1647
 #, c-format
 msgid "Sorting"
 msgstr "Впорядкування"
 
-#: src/mdiff.c:1655
+#: src/mdiff.c:1664
 #, c-format
 msgid ", clustering"
 msgstr ", групування"
 
-#: src/mdiff.c:1824 src/mdiff.c:1886
+#: src/mdiff.c:1833 src/mdiff.c:1895
 #, c-format
 msgid ", done\n"
 msgstr ", виконано\n"
 
-#: src/mdiff.c:1873
+#: src/mdiff.c:1882
 #, c-format
 msgid "Sorting members"
 msgstr "Впорядкування елементів"
 
-#: src/mdiff.c:1905
+#: src/mdiff.c:1915 src/mdiff.c:2298
 #, c-format
-msgid "Work summary: %d clusters, %d members\n"
-msgstr "Резюме обробки: %d груп, %d елементів\n"
+msgid "Work summary:"
+msgstr "Підсумки обробки:"
 
-#: src/mdiff.c:2284
+#: src/mdiff.c:1916 src/mdiff.c:2299
 #, c-format
-msgid "Work summary: %d clusters, %d members, %d overlaps\n"
-msgstr "Резюме обробки: %d груп, %d елементів, %d перекриття\n"
+msgid " %d cluster,"
+msgid_plural " %d clusters,"
+msgstr[0] " %d група,"
+msgstr[1] " %d групи,"
+msgstr[2] " %d груп,"
 
-#: src/mdiff.c:2333 src/wdiff.c:224
+#: src/mdiff.c:1918
+#, c-format
+msgid " %d member\n"
+msgid_plural " %d members\n"
+msgstr[0] " %d елемент\n"
+msgstr[1] " %d елементи\n"
+msgstr[2] " %d елементів\n"
+
+#: src/mdiff.c:2301
+#, c-format
+msgid " %d member,"
+msgid_plural " %d members,"
+msgstr[0] " %d елемент,"
+msgstr[1] " %d елементи,"
+msgstr[2] " %d елементів,"
+
+#: src/mdiff.c:2303
+#, c-format
+msgid " %d overlap\n"
+msgid_plural " %d overlaps\n"
+msgstr[0] " %d перекриття\n"
+msgstr[1] " %d перекриття\n"
+msgstr[2] " %d перекриттів\n"
+
+#: src/mdiff.c:2353 src/wdiff.c:228
 #, c-format
 msgid "select a terminal through the TERM environment variable"
 msgstr "вибір термінала за допомогою змінної середовища TERM"
 
-#: src/mdiff.c:2336 src/wdiff.c:227
+#: src/mdiff.c:2356 src/wdiff.c:231
 #, c-format
 msgid "could not access the termcap data base"
 msgstr "не вдалося отримати доступ до бази даних termcap"
 
-#: src/mdiff.c:2338 src/wdiff.c:229
+#: src/mdiff.c:2358 src/wdiff.c:233
 #, c-format
 msgid "terminal type `%s' is not defined"
 msgstr "тип термінала «%s» не визначено"
 
-#: src/mdiff.c:3686 src/mdiff.c:3698 src/wdiff.c:1175 src/wdiff.c:1187
+#: src/mdiff.c:3709 src/mdiff.c:3725 src/wdiff.c:1167 src/wdiff.c:1183
 #, c-format
-msgid "%s: %d words"
-msgstr "%s: %d слів"
+msgid "%s: %d word"
+msgid_plural "%s: %d words"
+msgstr[0] "%s: %d слово"
+msgstr[1] "%s: %d слова"
+msgstr[2] "%s: %d слів"
 
-#: src/mdiff.c:3689 src/mdiff.c:3701 src/wdiff.c:1178 src/wdiff.c:1190
+#: src/mdiff.c:3713 src/mdiff.c:3729 src/wdiff.c:1171 src/wdiff.c:1187
 #, c-format
-msgid "  %d %d%% common"
-msgstr "  %d %d%% спільні"
+msgid "  %d %.0f%% common"
+msgid_plural "  %d %.0f%% common"
+msgstr[0] "  %d %.0f%% спільні"
+msgstr[1] "  %d %.0f%% спільні"
+msgstr[2] "  %d %.0f%% спільні"
 
-#: src/mdiff.c:3691 src/wdiff.c:1180
+#: src/mdiff.c:3716 src/wdiff.c:1174
 #, c-format
-msgid "  %d %d%% deleted"
-msgstr "  %d %d%% вилучено"
+msgid "  %d %.0f%% deleted"
+msgid_plural "  %d %.0f%% deleted"
+msgstr[0] "  %d %.0f%% вилучено"
+msgstr[1] "  %d %.0f%% вилучено"
+msgstr[2] "  %d %.0f%% вилучено"
 
-#: src/mdiff.c:3693 src/mdiff.c:3705 src/wdiff.c:1182 src/wdiff.c:1194
+#: src/mdiff.c:3719 src/mdiff.c:3735 src/wdiff.c:1177 src/wdiff.c:1193
 #, c-format
-msgid "  %d %d%% changed"
-msgstr "  %d %d%% змінено"
+msgid "  %d %.0f%% changed"
+msgid_plural "  %d %.0f%% changed"
+msgstr[0] "  %d %.0f%% змінено"
+msgstr[1] "  %d %.0f%% змінено"
+msgstr[2] "  %d %.0f%% змінено"
 
-#: src/mdiff.c:3703 src/wdiff.c:1192
+#: src/mdiff.c:3732 src/wdiff.c:1190
 #, c-format
-msgid "  %d %d%% inserted"
-msgstr "  %d %d%% вставлено"
+msgid "  %d %.0f%% inserted"
+msgid_plural "  %d %.0f%% inserted"
+msgstr[0] "  %d %.0f%% вставлено"
+msgstr[1] "  %d %.0f%% вставлено"
+msgstr[2] "  %d %.0f%% вставлено"
 
-#: src/mdiff.c:3732 src/wdiff.c:1233 src/wdiff2.c:172
+#: src/mdiff.c:3763 src/wdiff.c:1233 src/wdiff2.c:172
 #, c-format
 msgid "Try `%s --help' for more information.\n"
 msgstr "Виконайте команду «%s --help», щоб дізнатися більше.\n"
 
-#: src/mdiff.c:3737
+#: src/mdiff.c:3768
 msgid ""
 "mdiff - Studies multiple files and searches for similar sequences, it then\n"
 "produces possibly detailed lists of differences and similarities.\n"
@@ -132,12 +194,12 @@ msgstr ""
 "символів, а потім\n"
 "створює докладні списки відмінностей і подібностей.\n"
 
-#: src/mdiff.c:3742
+#: src/mdiff.c:3773
 #, c-format
 msgid "Usage: %s [OPTION]... [FILE]...\n"
 msgstr "Використання: %s [ПАРАМЕТР]... [ФАЙЛ]...\n"
 
-#: src/mdiff.c:3746
+#: src/mdiff.c:3777
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -145,26 +207,26 @@ msgstr ""
 "\n"
 "Режими обробки:\n"
 
-#: src/mdiff.c:3747
+#: src/mdiff.c:3778
 msgid "  -h                     (ignored)\n"
 msgstr "  -h                     (проігноровано)\n"
 
-#: src/mdiff.c:3748
+#: src/mdiff.c:3779
 msgid "  -v, --verbose          report a few statistics on stderr\n"
 msgstr "  -v, --verbose          звітувати щодо статистичних даних до stderr\n"
 
-#: src/mdiff.c:3749 src/unify.c:295
+#: src/mdiff.c:3780 src/unify.c:295
 msgid "      --help             display this help then exit\n"
 msgstr ""
 "      --help             показати ці довідкові дані і завершити роботу\n"
 
-#: src/mdiff.c:3750 src/unify.c:296
+#: src/mdiff.c:3781 src/unify.c:296
 msgid "      --version          display program version then exit\n"
 msgstr ""
 "      --version          показати дані щодо версії програми і завершити "
 "роботу\n"
 
-#: src/mdiff.c:3752
+#: src/mdiff.c:3783
 msgid ""
 "\n"
 "Formatting output:\n"
@@ -172,33 +234,33 @@ msgstr ""
 "\n"
 "Форматування результатів:\n"
 
-#: src/mdiff.c:3753
+#: src/mdiff.c:3784
 msgid "  -T, --initial-tab       produce TAB instead of initial space\n"
 msgstr "  -T, --initial-tab       додавати TAB замість початкового пробілу\n"
 
-#: src/mdiff.c:3754
+#: src/mdiff.c:3785
 msgid "  -l, --paginate          paginate output through `pr'\n"
 msgstr ""
 "  -l, --paginate          поділити виведені дані на сторінки за допомогою "
 "«pr»\n"
 
-#: src/mdiff.c:3755
+#: src/mdiff.c:3786
 msgid "  -S, --string[=STRING]   take note of another user STRING\n"
 msgstr "  -S, --string[=РЯДОК]    звернути увагу на інший РЯДОК користувача\n"
 
-#: src/mdiff.c:3756
+#: src/mdiff.c:3787
 msgid ""
 "  -V, --show-links        give file and line references in annotations\n"
 msgstr ""
 "  -V, --show-links        додати посилання на файли і рядки до анотацій\n"
 
-#: src/mdiff.c:3757
+#: src/mdiff.c:3788
 msgid "  -t, --expand-tabs       expand tabs to spaces in the output\n"
 msgstr ""
 "  -t, --expand-tabs       перетворити символи табуляції у виведених даних на "
 "пробіли\n"
 
-#: src/mdiff.c:3760
+#: src/mdiff.c:3791
 msgid ""
 "\n"
 "Debugging:\n"
@@ -206,13 +268,13 @@ msgstr ""
 "\n"
 "Зневаджування:\n"
 
-#: src/mdiff.c:3761
+#: src/mdiff.c:3792
 msgid "  -0, --debugging   output many details about what is going on\n"
 msgstr ""
 "  -0, --debugging   показувати докладні повідомлення щодо дій, які "
 "виконуються\n"
 
-#: src/mdiff.c:3764
+#: src/mdiff.c:3795
 msgid ""
 "\n"
 "Word mode options:\n"
@@ -220,83 +282,83 @@ msgstr ""
 "\n"
 "Параметри режиму слів:\n"
 
-#: src/mdiff.c:3765 src/wdiff.c:1251 src/wdiff2.c:190
+#: src/mdiff.c:3796 src/wdiff.c:1251 src/wdiff2.c:190
 msgid "  -1, --no-deleted           inhibit output of deleted words\n"
 msgstr ""
 "  -1, --no-deleted           блокувати виведення даних щодо вилучених слів\n"
 
-#: src/mdiff.c:3766 src/wdiff.c:1252 src/wdiff2.c:191
+#: src/mdiff.c:3797 src/wdiff.c:1252 src/wdiff2.c:191
 msgid "  -2, --no-inserted          inhibit output of inserted words\n"
 msgstr ""
 "  -2, --no-inserted          блокувати виведення даних щодо вставлених слів\n"
 
-#: src/mdiff.c:3767 src/wdiff.c:1253 src/wdiff2.c:192
+#: src/mdiff.c:3798 src/wdiff.c:1253 src/wdiff2.c:192
 msgid "  -3, --no-common            inhibit output of common words\n"
 msgstr ""
 "  -3, --no-common            блокування виведення даних щодо спільних слів\n"
 
-#: src/mdiff.c:3768
+#: src/mdiff.c:3799
 msgid "  -A, --auto-pager           automatically calls a pager\n"
 msgstr "  -A, --auto-pager           автоматично поділяти на сторінки\n"
 
-#: src/mdiff.c:3769
+#: src/mdiff.c:3800
 msgid "  -k, --less-mode            variation of printer mode for \"less\"\n"
 msgstr "  -k, --less-mode            різновид режиму принтера для \"less\"\n"
 
-#: src/mdiff.c:3770
+#: src/mdiff.c:3801
 msgid "  -m, --avoid-wraps          do not extend fields through newlines\n"
 msgstr ""
 "  -m, --avoid-wraps          не розгортати поля додаванням символів розбиття "
 "на рядки\n"
 
-#: src/mdiff.c:3771
+#: src/mdiff.c:3802
 msgid "  -o, --printer              overstrike as for printers\n"
 msgstr ""
 "  -o, --printer              надкреслювати дані, подібно форматування для "
 "друку\n"
 
-#: src/mdiff.c:3772
+#: src/mdiff.c:3803
 msgid "  -z, --terminal             use termcap as for terminal displays\n"
 msgstr ""
 "  -z, --terminal             використовувати termcap, подібно до виведення "
 "даних на термінал\n"
 
-#: src/mdiff.c:3773
+#: src/mdiff.c:3804
 msgid "  -O, --item-regexp=REGEXP   compare items as defined by REGEXP\n"
 msgstr ""
 "  -O, --item-regexp=ФОРМ_ВИР порівняти дані відповідно до вказаного "
 "ФОРМ_ВИР\n"
 
-#: src/mdiff.c:3774
+#: src/mdiff.c:3805
 msgid "  -W, --word-mode            compare words instead of lines\n"
 msgstr "  -W, --word-mode            порівнювати слова, а не рядки\n"
 
-#: src/mdiff.c:3959
+#: src/mdiff.c:3990
 msgid "With no FILE, or when FILE is -, read standard input.\n"
 msgstr ""
 "Якщо не вказано ФАЙЛ або вказано значення -, дані буде прочитано зі "
 "стандартного джерела вхідних даних.\n"
 
-#: src/mdiff.c:3961 src/unify.c:300 src/wdiff.c:1269 src/wdiff2.c:210
+#: src/mdiff.c:3992 src/unify.c:300 src/wdiff.c:1269 src/wdiff2.c:210
 msgid "Report bugs to <wdiff-bugs@gnu.org>.\n"
 msgstr "Про вади слід повідомляти на адресу <wdiff-bugs@gnu.org>.\n"
 
-#: src/mdiff.c:3973
+#: src/mdiff.c:4004
 #, c-format
 msgid "ignoring option %s (not implemented)"
 msgstr "пропущено параметр %s (обробку цього параметра не реалізовано)"
 
-#: src/mdiff.c:4269
+#: src/mdiff.c:4300
 #, c-format
 msgid "cannot use -z, termcap not available"
 msgstr "не можна використовувати -z, не виявлено termcap"
 
-#: src/mdiff.c:4308
+#: src/mdiff.c:4339
 #, c-format
 msgid "word merging for two files only (so far)"
 msgstr "об’єднання за словами реалізовано лише для пар файлів (поки що)"
 
-#: src/mdiff.c:4324
+#: src/mdiff.c:4355
 msgid ""
 "\n"
 "Copyright (C) 1992, 1997, 1998, 1999, 2010 Free Software Foundation, Inc.\n"
@@ -305,7 +367,7 @@ msgstr ""
 "Авторські права належать Free Software Foundation, Inc., 1992, 1997, 1998, "
 "1999, 2010\n"
 
-#: src/mdiff.c:4327 src/unify.c:407 src/wdiff.c:1395 src/wdiff2.c:131
+#: src/mdiff.c:4358 src/unify.c:407 src/wdiff.c:1395 src/wdiff2.c:131
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -316,7 +378,7 @@ msgstr ""
 "гарантій працездатності\n"
 "або придатності для певної мети.\n"
 
-#: src/mdiff.c:4330 src/wdiff.c:1398 src/wdiff2.c:134
+#: src/mdiff.c:4361 src/wdiff.c:1398 src/wdiff2.c:134
 msgid ""
 "\n"
 "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
@@ -324,7 +386,7 @@ msgstr ""
 "\n"
 "Автором програми є François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/mdiff.c:4365
+#: src/mdiff.c:4396
 #, c-format
 msgid "options -123RSYZ meaningful only when two inputs"
 msgstr ""
@@ -460,17 +522,17 @@ msgstr "помилкове форматування даних контекст�
 msgid "context diff missing `new' header at line %ld"
 msgstr "у даних контекстних відмінностей немає заголовка «new» у рядку %ld"
 
-#: src/wdiff.c:578 src/wdiff.c:697
+#: src/wdiff.c:582 src/wdiff.c:701
 #, c-format
 msgid "no suitable temporary directory exists"
 msgstr "не виявлено відповідного каталогу тимчасових даних"
 
-#: src/wdiff.c:1036
+#: src/wdiff.c:1040
 #, c-format
 msgid "%s: input program killed by signal %d\n"
 msgstr "%s: виконання програми-джерела даних було припинено сигналом %d\n"
 
-#: src/wdiff.c:1153
+#: src/wdiff.c:1145
 #, c-format
 msgid "%s: output program killed by signal %d\n"
 msgstr "%s: програму-отримувач даних було зупинено сигналом %d\n"
@@ -618,9 +680,10 @@ msgid "cannot use -t, termcap not available"
 msgstr "не можна використовувати -t, не виявлено termcap"
 
 #: src/wdiff.c:1391
+#, fuzzy
 msgid ""
 "\n"
-"Copyright (C) 1992, 1997, 1998, 1999, 2009, 2010 Free Software\n"
+"Copyright (C) 1992, 1997, 1998, 1999, 2009, 2010, 2011, 2012 Free Software\n"
 "Foundation, Inc.\n"
 msgstr ""
 "\n"
@@ -681,3 +744,12 @@ msgstr "Запуск «%s"
 #, c-format
 msgid "'\n"
 msgstr "»\n"
+
+#~ msgid "Read summary: %d files, %d items\n"
+#~ msgstr "Резюме читання: %d файлів, %d пунктів\n"
+
+#~ msgid "Work summary: %d clusters, %d members\n"
+#~ msgstr "Резюме обробки: %d груп, %d елементів\n"
+
+#~ msgid "Work summary: %d clusters, %d members, %d overlaps\n"
+#~ msgstr "Резюме обробки: %d груп, %d елементів, %d перекриття\n"

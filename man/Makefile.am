@@ -5,7 +5,7 @@
 
 man_MANS = wdiff.1 $(EXPERIMENTAL_MANS)
 EXTRA_MANS = mdiff.1 unify.1 wdiff2.1
-EXTRA_DIST = mdiff.1 unify.1 wdiff.1 wdiff2.1 wdiff.h2m
+EXTRA_DIST = mdiff.1 unify.1 wdiff.1 wdiff2.1 wdiff.h2m debian669340.patch
 
 # The man pages depend on the --help strings and the version number.
 common_mandeps = $(top_srcdir)/configure.ac
@@ -24,9 +24,12 @@ unify.1: $(top_srcdir)/src/unify.c $(common_mandeps)
 	test ../src/unify -nt $< || $(MAKE) -C ../src unify
 	$(path_help2man) unify -o $@
 
-wdiff.1: $(top_srcdir)/src/wdiff.c wdiff.h2m $(common_mandeps)
+wdiff.1: $(top_srcdir)/src/wdiff.c wdiff.h2m debian669340.patch $(common_mandeps)
 	test ../src/wdiff -nt $< || $(MAKE) -C ../src wdiff
-	$(path_help2man) -i wdiff.h2m wdiff -o $@
+	$(RM) $@
+	$(path_help2man) -i wdiff.h2m wdiff -o $@.tmp
+	patch --no-backup-if-mismatch --force $@.tmp < debian669340.patch
+	mv $@.tmp $@
 
 wdiff2.1: $(top_srcdir)/src/wdiff2.c $(common_mandeps)
 	test ../src/wdiff2 -nt $< || $(MAKE) -C ../src wdiff2

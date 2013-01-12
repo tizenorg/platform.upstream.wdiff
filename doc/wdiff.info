@@ -17,8 +17,8 @@ END-INFO-DIR-ENTRY
 finding which words have been deleted or added to the first for getting
 the second.  It also documents some other `diff' related tools.
 
-   Copyright (C) 1992, 1994, 1997, 1998, 1999, 2010, 2011 Free Software
-Foundation, Inc.
+   Copyright (C) 1992, 1994, 1997, 1998, 1999, 2010, 2011, 2012 Free
+Software Foundation, Inc.
 
    Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -45,7 +45,7 @@ with some other `diff' related tools.  Note that some tools documented
 here are considered experimental and may not be part of every `wdiff'
 installation.  *Note Experimental::.
 
-This is for release 1.0.1.
+This is for release 1.1.2.
 
 * Menu:
 
@@ -1157,22 +1157,22 @@ would be clear that it wasn't as testes as the good old `wdiff' command.
 
 
 Tag Table:
-Node: Top1547
-Node: Overview2876
-Node: wdiff4574
-Node: wdiff invocation5291
-Node: wdiff Examples14025
-Node: mdiff18097
-Node: mdiff invocation24932
-Node: Efficiency34584
-Ref: Efficiency-Footnote-138286
-Node: unify38326
-Node: unify invocation39423
-Node: Compatibility41778
-Node: diff Compatibility42456
-Node: wdiff Compatibility44713
-Node: Experimental46116
-Node: Experimental History46975
+Node: Top1553
+Node: Overview2882
+Node: wdiff4580
+Node: wdiff invocation5297
+Node: wdiff Examples14031
+Node: mdiff18103
+Node: mdiff invocation24938
+Node: Efficiency34590
+Ref: Efficiency-Footnote-138292
+Node: unify38332
+Node: unify invocation39429
+Node: Compatibility41784
+Node: diff Compatibility42462
+Node: wdiff Compatibility44719
+Node: Experimental46122
+Node: Experimental History46981
 
 End Tag Table
 

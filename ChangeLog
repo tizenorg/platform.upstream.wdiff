@@ -1,3 +1,218 @@
+2012-05-30  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Gnulib stdio: don't assume gets any more.
+	
+	Backport a change to gnulib which avoids a compiler error on C11 compilers
+	which no longer provide a gets function.
+	
+	Reported by Praveen Kumar to affect packaging for Fedora.
+
+2012-05-22  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Releasing 1.1.1.
+
+2012-05-22  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Bump version number.
+
+2012-05-22  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Include patch in distribution tarball.
+
+2012-05-19  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Add NEWS item for 1.1.1
+
+2012-05-19  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Update copyright to 2012.
+
+2012-05-19  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Only index files, not directories.
+	
+	Without this change, many syntax checks suddenly fail. Perhaps due to some
+	change to bzr, not sure.
+
+2012-05-19  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Updated translations: da, sr, vi.
+
+2012-05-17  ???????? ???????  <miroslavnikolic@rocketmail.com>
+
+	Added Serbian translation.
+
+2012-04-22  Tr?n Ng?c Qu?n  <vnwildman@gmail.com>
+
+	Updated Vietnamese translation.
+
+2012-04-22  Keld Simonsen  <keld@keldix.com>
+
+	Updated Danish translation.
+
+2012-04-21  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Fix wdiff man page synopsis.
+	
+	This fix works around the actual problem using a patch, in order to avoid
+	changes to the translatable messages of the help on usage.
+
+2011-11-16  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Fix title of 1.1.0 section in NEWS file.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Releasing 1.1.0.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Updated NEWS.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Updated translations: cs, de, es, fi, nl, pl, sl, sv, uk.
+
+2011-10-27  Jan Dj?rv  <jan.h.d@swipnet.se>
+
+	Updated Swedish translation.
+
+2011-10-20  Santiago Vila Doncel  <sanvila@unex.es>
+
+	Updated Spanish translation.
+
+2011-09-28  Michael Piefel  <piefel@informatik.hu-berlin.de>
+
+	Updated German translation.
+
+2011-09-19  Benno Schulenberg  <benno@vertaalt.nl>
+
+	Updated Dutch translation.
+
+2011-09-19  Jan Dj?rv  <jan.h.d@swipnet.se>
+
+	Updated Swedish translation.
+
+2011-09-19  Petr Pisar  <petr.pisar@atlas.cz>
+
+	Updated Czech translation.
+
+2011-09-19  Jorma Karvonen  <karvonen.jorma@gmail.com>
+
+	Updated Finnish translation.
+
+2011-09-17  Primo? Peterlin  <primozz.peterlin@gmail.com>
+
+	Updated Slovenian translation.
+
+2011-09-17  Rafa? Maszkowski  <rzm@icm.edu.pl>
+
+	Updated Polish translation.
+
+2011-09-17  Yuri Chornoivan  <yurchor@ukr.net>
+
+	Updated Ukrainian translation.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Updated gnulib.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Updated gnulib.
+	
+	Re-imported gnulib modules based on the current revision
+	9c19e102abfbf90cb5286c01441fec9f0b37b348 of the master branch, or more
+	precisely, revision 52f7b80b7d853ef399e51f8189558b9976299bb8 of my own
+	"mvg" branch, available from github.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Merge from trunk.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Imported gnulib modules we started using in the last two commits.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Drop autodetection of less in mdiff as well.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Drop autodetection of less. Use the environment variable LESS instead to
+	pass options to less without affecting other pagers. Pass -R in addition to 
+	-X so less will simply pass control sequences to the terminal. By no longer
+	automatically enabling less-mode (i.e. overstrike_for_less), we avoid   
+	having to split a byte stream into characters for multibyte locales.
+	Less-mode is now deprecated, but can still be used if explicitely enabled on
+	the command line.
+
+2011-11-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	* Pass PATH on to env inside screen. Without this, screen on OS X 10.5 will
+	set that variable to some default, and the version of wdiff that will be
+	tested will be the one installed, not the one just built.
+	* Don't mention screen in AT_TESTED, as doing so will cause the test suite
+	to fail if screen isn't available.
+	
+	Thanks to Nelson H. F. Beebe for a verbose e-mail pointing out these issues.
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Don't run the public-submodule-commit rule as part of the check target.
+	
+	The resulting extra output of "make check" can be confusing for users, and
+	doesn't benefit wdiff as we're using neither git nor submodules.
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Document testsuite fix
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Improve portability of testsuite.
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Merge from trunk.
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Merge from trunk.
+
+2011-09-29  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Use tr instead of sed to remove carriage returns in testsuite.
+	
+	The sed binary on OS X 10.6 doesn't recognise the '\r' escape sequence, and
+	matches all occurrences of the letter 'r' instead.  POSIX doesnapparently
+	doesn't require sed to understand '\r', but tr is required to know about it.
+	
+	Thanks to John Purnell for the report and detailed investigation.
+
+2011-09-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Beta release 1.0.2.
+
+2011-09-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Preparing a beta release 1.0.2 for translators.
+	
+	As there are virtually no changes except for the translation message id
+	strings, there is little point in releasing this version tothe public before
+	a significant number of translations are available as well.  Thus it's beta.
+
+2011-09-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Use ngettext to allow the use of proper plural forms.
+	
+	Thanks to Petr Pisar for bringing this to my attention.
+
+2011-09-15  Martin von Gagern  <Martin.vGagern@gmx.net>
+
+	Releasing 1.0.1.
+
 2011-09-14  Martin von Gagern  <Martin.vGagern@gmx.net>
 
 	Updated translations: cs, sv.
