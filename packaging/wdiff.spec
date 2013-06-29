@@ -6,6 +6,7 @@ Summary:        Display Word Differences Between Text Files
 Url:            ftp://mirrors.kernel.org/gnu/wdiff/
 Group:          Productivity/Text/Utilities
 Source:         http://alpha.gnu.org/gnu/wdiff/wdiff-%{version}.tar.bz2
+Source1001: 	wdiff.manifest
 BuildRequires:  ncurses-devel
 
 %description
@@ -26,6 +27,7 @@ Contains language specific files for of wdiff.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 # those autoconf tools never really work, do they?
@@ -43,6 +45,7 @@ make "DESTDIR=%{buildroot}" install
 %find_lang %{name}
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %{_infodir}/wdiff.info*
@@ -50,6 +53,7 @@ make "DESTDIR=%{buildroot}" install
 %{_mandir}/man1/*
 
 %files lang -f %{name}-gnulib.lang -f %{name}.lang
+%manifest %{name}.manifest
 
 
 %changelog
