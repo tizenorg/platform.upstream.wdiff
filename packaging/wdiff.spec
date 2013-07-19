@@ -1,5 +1,5 @@
 Name:           wdiff
-Version:        1.0.2
+Version:        1.1.2
 Release:        1
 License:        GPL-2.0+
 Summary:        Display Word Differences Between Text Files
